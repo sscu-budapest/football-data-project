@@ -1,0 +1,13 @@
+md5: eeb095840568126cbccbeea6d7bd264a
+frozen: true
+deps:
+- path: data/complete
+  repo:
+    url: git@github.com:/sscu-budapest/football-player-values-data
+    rev: internal
+    rev_lock: acdcce2a400498b3faafbe9480258894d25d68a5
+outs:
+- md5: 1dd0368f2b52227734963fbbef4030b7.dir
+  size: 32419936
+  nfiles: 9
+  path: complete
