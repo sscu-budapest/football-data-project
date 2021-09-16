@@ -1,0 +1,13 @@
+md5: 8c22fec1aaee2679a4b844f17b97ffd2
+frozen: true
+deps:
+- path: data/complete
+  repo:
+    url: git@github.com:/sscu-budapest/football-events-data
+    rev: internal
+    rev_lock: 81c09ba71c81f022213693900f0cb3ceefd58168
+outs:
+- md5: 4662f141f549818b10b17edb495235f9.dir
+  size: 1453761478
+  nfiles: 320
+  path: complete
