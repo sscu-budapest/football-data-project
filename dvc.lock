@@ -1,0 +1,82 @@
+schema: '2.0'
+stages:
+  run_entity_coreference:
+    cmd: python -m src run_entity_coreference
+    deps:
+    - path: data/fe/old_top/lineups.parquet
+      md5: d77113cfe58fd1932e6e27b9c7780480
+      size: 544082
+    - path: data/fe/old_top/matches.parquet
+      md5: 4933d7aa8a75f1f97e51fc7ea1e362db
+      size: 58044
+    - path: data/fe/old_top/players.parquet
+      md5: f32bd104e00c9b314881f13cd360ccc3
+      size: 45901
+    - path: data/fe/old_top/seasons.parquet
+      md5: 2f6b2208fc8e89a1b042be50222e65ee
+      size: 3810
+    - path: data/fe/old_top/teams.parquet
+      md5: 43e58ba0b3d6e73370b8cda20b07c9bf
+      size: 3903
+    - path: data/pv/old_top/countries.parquet
+      md5: efc19e4b0ec2bbd87798901861370561
+      size: 2837
+    - path: data/pv/old_top/match_info.parquet
+      md5: c28b5610f587e6266d955e55fd5822b0
+      size: 24856
+    - path: data/pv/old_top/match_lineups.parquet
+      md5: 996c0f46ceabc9bf8743d617e9379df7
+      size: 496046
+    - path: data/pv/old_top/player_info.parquet
+      md5: d0152861884fa55ccc05341726db5d3c
+      size: 136316
+    - path: data/pv/old_top/season_info.parquet
+      md5: 1a77bfae05b8250dd9e78c81e531dc30
+      size: 4845
+    - path: data/pv/old_top/team_info.parquet
+      md5: bdc97a5689b6273bfe6b5e41390046d6
+      size: 32815
+    - path: src/entity_coreference/create_bases.py
+      md5: 6df45e6697668f9a3f2dfb97c2c9f84d
+      size: 4797
+    - path: src/entity_coreference/create_rolls.py
+      md5: ea69c2c63292f99e7b4a8422e460dfc5
+      size: 4971
+    - path: src/entity_coreference/runner.py
+      md5: 873d360ecee392b1c87e5ab7b98a0426
+      size: 5495
+    outs:
+    - path: data/coref/matches.parquet
+      md5: f0431465aa120d86feba645af24e7f49
+      size: 15523
+    - path: data/coref/players.parquet
+      md5: 552bdea108d1c1e36d1835cd6a0c61f6
+      size: 30212
+    - path: data/coref/seasons.parquet
+      md5: dfbcdc5a38b015b887deab27d188edcd
+      size: 3153
+    - path: data/coref/teams.parquet
+      md5: 3628e4eaa30a449bb8b1ccac7e0f127e
+      size: 3041
+  evaluate_coreference:
+    cmd: python -m src evaluate_coreference
+    deps:
+    - path: data/coref/matches.parquet
+      md5: f0431465aa120d86feba645af24e7f49
+      size: 15523
+    - path: data/coref/players.parquet
+      md5: 552bdea108d1c1e36d1835cd6a0c61f6
+      size: 30212
+    - path: data/coref/seasons.parquet
+      md5: dfbcdc5a38b015b887deab27d188edcd
+      size: 3153
+    - path: data/coref/teams.parquet
+      md5: 3628e4eaa30a449bb8b1ccac7e0f127e
+      size: 3041
+    - path: src/entity_coreference/evaluate.py
+      md5: c991ca45d7eba7b6660c6eae72a3024f
+      size: 2776
+    outs:
+    - path: reports/coreference_evaluation.md
+      md5: d539342e36e3c4406a2afeba48d66806
+      size: 3818

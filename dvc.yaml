@@ -1,0 +1,34 @@
+stages:
+  run_entity_coreference:
+    cmd: python -m src run_entity_coreference
+    deps:
+    - data/fe/old_top/lineups.parquet
+    - data/fe/old_top/matches.parquet
+    - data/fe/old_top/players.parquet
+    - data/fe/old_top/seasons.parquet
+    - data/fe/old_top/teams.parquet
+    - data/pv/old_top/countries.parquet
+    - data/pv/old_top/match_info.parquet
+    - data/pv/old_top/match_lineups.parquet
+    - data/pv/old_top/player_info.parquet
+    - data/pv/old_top/season_info.parquet
+    - data/pv/old_top/team_info.parquet
+    - src/entity_coreference/create_bases.py
+    - src/entity_coreference/create_rolls.py
+    - src/entity_coreference/runner.py
+    outs:
+    - data/coref/matches.parquet
+    - data/coref/players.parquet
+    - data/coref/seasons.parquet
+    - data/coref/teams.parquet
+  evaluate_coreference:
+    cmd: python -m src evaluate_coreference
+    deps:
+    - data/coref/matches.parquet
+    - data/coref/players.parquet
+    - data/coref/seasons.parquet
+    - data/coref/teams.parquet
+    - src/entity_coreference/evaluate.py
+    outs:
+    - reports/coreference_evaluation.md:
+        cache: false

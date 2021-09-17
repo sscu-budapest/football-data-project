@@ -1,13 +1,13 @@
-md5: de4a9cc94cc3381a5c70bfc89fd52df7
+md5: f55e7b64f9c83c86a8fb8f5f7013a4f4
 frozen: true
 deps:
 - path: data/old_top
   repo:
     url: git@github.com:/sscu-budapest/football-events-data
     rev: public
-    rev_lock: 8751838ec95e3a5fdf48af5e946376e9cb5ae90e
+    rev_lock: 28fd5bf889908ade07d407e7c8415b767da283ae
 outs:
-- md5: 85fce828590e829a30189dc6085b8840.dir
-  size: 45328808
+- md5: 08e978b6e78e0c5cab0ca37e4e2b0cc9.dir
+  size: 45330646
   nfiles: 11
   path: old_top
