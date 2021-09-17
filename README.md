@@ -1,3 +1,3 @@
-# Research Project Template - WIP
+# Football Data Project
 
-change `src/step.py` and the related import in `src/__init__.py`
+lots of previous work migrating here slowly
