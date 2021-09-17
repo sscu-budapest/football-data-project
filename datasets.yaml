@@ -1,0 +1,14 @@
+- prefix: pv
+  repo: git@github.com:/sscu-budapest/football-player-values-data
+  subsets:
+  - name: complete
+    tag: internal
+  - name: old_top
+    tag: public
+- prefix: fe
+  repo: git@github.com:/sscu-budapest/football-events-data
+  subsets:
+  - name: complete
+    tag: internal
+  - name: old_top
+    tag: public
