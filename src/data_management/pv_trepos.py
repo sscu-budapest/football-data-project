@@ -1,6 +1,5 @@
 from sscutils import create_trepo_with_subsets
 
-
 countries_table = create_trepo_with_subsets("countries", prefix="pv")
 player_info_table = create_trepo_with_subsets("player_info", prefix="pv")
 seasons_table = create_trepo_with_subsets("season_info", prefix="pv")
