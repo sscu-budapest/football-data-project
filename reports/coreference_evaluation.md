@@ -1,0 +1,229 @@
+# Evaluation of Entity Coreference
+
+## Coreferences found and missed
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pv_fit_rate</th>
+      <th>pv_miss_count</th>
+      <th>fe_fit_rate</th>
+      <th>fe_miss_count</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>seasons</th>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>matches</th>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.800000</td>
+      <td>304</td>
+    </tr>
+    <tr>
+      <th>teams</th>
+      <td>0.171196</td>
+      <td>305</td>
+      <td>1.000000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>players</th>
+      <td>0.998543</td>
+      <td>3</td>
+      <td>0.985625</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+## Rates of matches
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rate</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>seasons</th>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <th>matches</th>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <th>teams</th>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <th>players</th>
+      <td>99.85%</td>
+    </tr>
+  </tbody>
+</table>
+
+## Event count of missing players
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>season</th>
+      <th>False</th>
+      <th>True</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>england_premier-league_2013-2014</td>
+      <td>475896</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>england_premier-league_2014-2015</td>
+      <td>453552</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>italy_serie-a_2015-2016</td>
+      <td>463336</td>
+      <td>185</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>spain_laliga_2014-2015</td>
+      <td>430400</td>
+      <td>143</td>
+    </tr>
+  </tbody>
+</table>
+
+## Missing event count by type
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Foul</th>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>SubstitutionOn</th>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>BallTouch</th>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Dispossessed</th>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Pass</th>
+      <td>231.0</td>
+    </tr>
+    <tr>
+      <th>BallRecovery</th>
+      <td>27.0</td>
+    </tr>
+    <tr>
+      <th>Tackle</th>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>Challenge</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Clearance</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>Interception</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>SubstitutionOff</th>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Aerial</th>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>TakeOn</th>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>SavedShot</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>BlockedPass</th>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>CornerAwarded</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>MissedShots</th>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>KeeperPickup</th>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>Save</th>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Smother</th>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Claim</th>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>KeeperSweeper</th>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Goal</th>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
