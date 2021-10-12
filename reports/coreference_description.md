@@ -8,6 +8,8 @@ We have player valuation with transfer history data from one source and match ev
 
 Fuzzy matching. Use simply the names of the players, with any additional information available, like date of birth, height, nationality and match them based on similarity. 
 
+[More on fuzzy performance]
+
 ### The Complications
 
 #### Resources
@@ -69,6 +71,8 @@ When matching in a motif set pair, a number of factors are considered:
 - similarity of attributes of entities
 - have entities in the motifs already been matched to each other
 - have entities in the motifs already been matched to some other entity
+
+[More on how they are "considered"]
 
 An additional step that alters the state of the coreference seeking system is **integrate to result**. This step does not change the motif set pair, but after the motifs from the two sets have been matched, an integration steps asserts whether entity coreferences can be established. For example if a pair of entities of the same type from the two source datasets are present in a number of matched motifs and only correspond to each other, they are likely to be coreferent and can be recorded so. This influences future motif matching steps. However if several entities from one source dataset have different corresponding entities from the other dataset based on the matched motifs, the whole state might be wrong and no coreferences should be established based on the matched motifs.
 
