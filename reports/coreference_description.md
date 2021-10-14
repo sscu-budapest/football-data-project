@@ -8,8 +8,6 @@ We have player valuation with transfer history data from one source and match ev
 
 Fuzzy matching. Use simply the names of the players, with any additional information available, like date of birth, height, nationality and match them based on similarity. 
 
-[More on fuzzy performance]
-
 ### The Complications
 
 #### Resources
@@ -21,6 +19,8 @@ Takes a lot of effort to calculate all possible similarities and find the best o
 More importantly, simply matching the players by themselves is not precise enough, mostly due to the noise in the data. Names of teams, leagues or players, dates and scores are mostly similar but do not always match and sometimes the data is just wrong. Sometimes players are simply referred to by their first name in one dataset and their full name in another. This problem can be demonstrated with an example of teams: in one dataset the names of two clubs are *Athletic* and *Atletico Madrid*, while in the other *Athletic Bilbao* and simply *Atletico*. So the solution must be open to the possibility, that the two entities, *Athletic* and *Atletico* even though are very similar in name - more similar than any other team name to either, ar not in fact coreferent. 
 
 Also, some players might have two or more different records in one dataset, due to simple data errors, that messes up a strict one-to-one matching.
+
+Approximately, this means that in a dataset conatining over 5 seasons of data, where a complex entity coreference algorithm can find over 99% of matches precisely, without edge conflicts, a simple fuccy matching can not reach 80% precision.
 
 #### Too Much Data for Manual Corrections
 
