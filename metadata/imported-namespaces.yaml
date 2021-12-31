@@ -1,0 +1,4 @@
+pv:
+  uri: git@github.com:/sscu-budapest/football-player-values-data
+fe:
+  uri: git@github.com:/sscu-budapest/football-events-data
