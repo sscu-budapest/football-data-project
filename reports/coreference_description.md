@@ -80,3 +80,87 @@ The steps that create transform and match motifs are intended to first find core
 
 All of this is implemented in the python package [encoref-v0.0.5](https://github.com/endremborza/encoref/tree/v0.0.5)
 
+
+## Literature Context
+
+Progress in entity coreference resolution (in some contexts, referred to as instance matching, or link discovery) seems rather slow and has not been able to generate much attention in the last few years, at least in academia. Articles are generally published in semantic web related conferences or journals like [Semantic Web][SW] and [Web Semantics][WS]. New algorithms and benchmarks are introduced at the yearly evaluation event of the Ontology Alignment Evaluation Initiative([OAEI]). 
+
+Song and Heflin started outlining a method on a similar scale in [SH2010] and [SH2011], which sparked a few notable extensions towards [machine learning][APEX2012] and [scalability][HOGAN2012]. This framing of the problem is a little more general, in the sense that in our case relationships, are known to be coreferent. So that when a team and a match is connected in one database by a `participated-as-home-team` link, it is known that there is a corresponding type of link in the other dataset that represents this same kind of relationship. In these methods, this knowledge is not assumed, but the requirements from the solutions are adjusted to be more modest, as opposed to having to find a 100% accurate matching for all entities in a dataset. 
+
+In more recent cases, the problem is more frequently framed as _link discovery_, with emphasis on scalability and the ambition of semantically connecting resources on the Linked Open Data (LOD) Cloud. A [survey] of these methods from 2017 gives a decent overview of the tools available, sometimes drifting into more general knowledge graph related issues, that are summarized [here][kgi].
+
+Based on the fact that most papers containing some novelty are published mainly by researches affiliated with companies, not universities, the problem is more prevalent in industry, than academia. It appears that in many cases it is viewed as an engineering issue, not a scientific one. Submitting solutions to evaluation events is a rather convoluted and technical endeavor, and open source tools around graph data and the semantic web are not as mature and popular as ones around tabular data, so the barrier to entry for anyone dealing with social sciences is high.
+
+```
+@article{nentwig2017survey,
+  title={A survey of current link discovery frameworks},
+  author={Nentwig, Markus and Hartung, Michael and Ngonga Ngomo, Axel-Cyrille and Rahm, Erhard},
+  journal={Semantic Web},
+  volume={8},
+  number={3},
+  pages={419--436},
+  year={2017},
+  publisher={IOS Press}
+}
+
+
+@article{paulheim2017knowledge,
+  title={Knowledge graph refinement: A survey of approaches and evaluation methods},
+  author={Paulheim, Heiko},
+  journal={Semantic web},
+  volume={8},
+  number={3},
+  pages={489--508},
+  year={2017},
+  publisher={IOS Press}
+}
+
+
+@inproceedings{song2010domain,
+  title={Domain-independent entity coreference in RDF graphs},
+  author={Song, Dezhao and Heflin, Jeff},
+  booktitle={Proceedings of the 19th ACM international conference on Information and knowledge management},
+  pages={1821--1824},
+  year={2010}
+}
+
+@inproceedings{song2011automatically,
+  title={Automatically generating data linkages using a domain-independent candidate selection approach},
+  author={Song, Dezhao and Heflin, Jeff},
+  booktitle={International Semantic Web Conference},
+  pages={649--664},
+  year={2011},
+  organization={Springer}
+}
+
+@inproceedings{rong2012machine,
+  title={A machine learning approach for instance matching based on similarity metrics},
+  author={Rong, Shu and Niu, Xing and Xiang, Evan Wei and Wang, Haofen and Yang, Qiang and Yu, Yong},
+  booktitle={International Semantic Web Conference},
+  pages={460--475},
+  year={2012},
+  organization={Springer}
+}
+
+@article{hogan2012scalable,
+  title={Scalable and distributed methods for entity matching, consolidation and disambiguation over linked data corpora},
+  author={Hogan, Aidan and Zimmermann, Antoine and Umbrich, J{\"u}rgen and Polleres, Axel and Decker, Stefan},
+  journal={Journal of Web Semantics},
+  volume={10},
+  pages={76--110},
+  year={2012},
+  publisher={Elsevier}
+}
+
+
+```
+
+[SW]: https://www.scimagojr.com/journalsearch.php?q=21100269620&tip=sid&clean=0
+[WS]: https://www.scimagojr.com/journalsearch.php?q=14879&tip=sid&clean=0
+[OAEI]: http://oaei.ontologymatching.org/
+[survey]: http://semantic-web-journal.org/system/files/swj1029.pdf
+[kgi]: http://www.semantic-web-journal.net/system/files/swj1167.pdf
+[SH2010]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.653.2214&rep=rep1&type=pdf
+[SH2011]: http://iswc2011.semanticweb.org/fileadmin/iswc/Papers/Research_Paper/09/70310640.pdf
+[APEX2012]: https://link.springer.com/content/pdf/10.1007/978-3-642-35176-1_29.pdf
+[HOGAN2012]: http://dit.unitn.it/~p2p/RelatedWork/Matching/entcons_jws_final.pdf
