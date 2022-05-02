@@ -20,6 +20,8 @@ More importantly, simply matching the players by themselves is not precise enoug
 
 Also, some players might have two or more different records in one dataset, due to simple data errors, that messes up a strict one-to-one matching.
 
+Approximately, this means that in a dataset conatining over 5 seasons of data, where a complex entity coreference algorithm can find over 99% of matches precisely, without edge conflicts, a simple fuccy matching can not reach 80% precision.
+
 #### Too Much Data for Manual Corrections
 
 Re-examining and correcting the possible matches for over ten thousand players is simply not feasible, so a solution needs to be able to improve upon itself iteratively, without human help.
@@ -69,6 +71,11 @@ When matching in a motif set pair, a number of factors are considered:
 - similarity of attributes of entities
 - have entities in the motifs already been matched to each other
 - have entities in the motifs already been matched to some other entity
+
+Similarity of attributes of entities is based on a weighted distance between entities in a certain class. A subset of the entities is taken, all of them are compared to each other. The numeric values take absolute difference (this makes taking logarithms necessary in some cases) as distance, while string values take levenshtein distance as distance. The distances in this sample provide a basis to standardize all other distances, so that the distribution of distances in all attributes are close to 0 mean 1 variance, so the distance between entities can be measured as the average of distances of their attributes.
+
+This smiliarity measure provides a basis for a distance, however if 2 corresponding entities in a motif are already matched to each other, this measure is replaced by a parametrized low value (generally around -8) and if they are matched to different entities a parametrized high value (generally around 8). Thus a similarity between two motifs can be calculated as the mean of these similarities of the corresponding entities in the motif.
+
 
 An additional step that alters the state of the coreference seeking system is **integrate to result**. This step does not change the motif set pair, but after the motifs from the two sets have been matched, an integration steps asserts whether entity coreferences can be established. For example if a pair of entities of the same type from the two source datasets are present in a number of matched motifs and only correspond to each other, they are likely to be coreferent and can be recorded so. This influences future motif matching steps. However if several entities from one source dataset have different corresponding entities from the other dataset based on the matched motifs, the whole state might be wrong and no coreferences should be established based on the matched motifs.
 
